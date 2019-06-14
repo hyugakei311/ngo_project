@@ -128,6 +128,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
+
+# STATICFILES_DIRS = [
+#     ('static', os.path.join(BASE_DIR, "static")),
+#     # your path
+#     # '/home/pingvin/Documents/project/ngo_project/static/',
+# ]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+
+
+
+# run
+# python manage.py collectstatic --noinput or
+# python3 manage.py collectstatic --noinput or
+# python3 manage.py collectstatic

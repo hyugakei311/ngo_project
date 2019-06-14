@@ -21,6 +21,7 @@ def get_login(request):
 
         # form.data.get("password")
         if User.objects.get(email=form.data.get('email'), password=form.data.get('password')):
+            user = User.obj
             print('email')
         else:
             print('no email')
