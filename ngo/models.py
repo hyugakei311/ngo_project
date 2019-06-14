@@ -24,7 +24,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=75, unique=True)
     password = models.CharField(max_length=100)
-    role = models.CharField(max_length=1, choices=R_ROLE,  default=USER,)
+    role = models.CharField(max_length=5, choices=R_ROLE,  default=USER,)
 
 
 class Event(models.Model):

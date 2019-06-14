@@ -7,3 +7,4 @@ from .models import User, Event
 class UserCreate(CreateView):
     model = User
     fields = "__all__"
+    success_url = '/login/'
