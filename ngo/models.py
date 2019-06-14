@@ -28,7 +28,9 @@ class User(models.Model):
 
 
 class Event(models.Model):
-
+    CONFERENCE= 1
+    SEMINAR= 2
+    PRESENTATION = 3
     C_CATEGORY = (
         ('C', 'Conference'),
         ('S', 'Seminar'),
@@ -38,7 +40,8 @@ class Event(models.Model):
     # user = models.ManyToManyField(User)
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
-    category = models.DateField(max_length=1,choices=C_CATEGORY)
+    category = models.CharField(max_length=1,choices=C_CATEGORY, default=CONFERENCE)
+    location = models.CharField(max_length=50, null=True)
     start_date = models.DateField()
     end_date = models.DateField()
     start_time = models.TimeField()
