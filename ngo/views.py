@@ -12,17 +12,27 @@ class UserCreate(CreateView):
     success_url = '/login/'
 
 
-
-
-
 def get_login(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
+        print("dddeeeeeeeeeeeeeeeeeeeeeeeeee")
         # create a form instance and populate it with data from the request:
         form = UserLoginForm(request.POST)
-        # check whether it's valid:
+
+        # form.data.get("password")
+        if User.objects.get(email=form.data.get('email'), password=form.data.get('password')):
+            print('email')
+        else:
+            print('no email')
+
+       # check whether it's valid:
+
+
         if form.is_valid():
 
+            User.objects.get(email=1)
+            print("ddddddddddddddddddddddddddddddddddd")
+            print(form)
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
