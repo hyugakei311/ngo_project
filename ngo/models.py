@@ -1,6 +1,16 @@
 from django.db import models
-
+from django.db.models import DateTimeField
+from django.utils import timezone
 # Create your models here.
+
+
+# class CustomDateTimeField(models.DateTimeField):
+#     def value_to_string(self, obj):
+#         val = self.value_from_object(obj)
+#         if val:
+#             val.replace(microsecond=0)
+#             return val.isoformat()
+#         return ''
 
 
 class User(models.Model):
@@ -25,7 +35,7 @@ class Event(models.Model):
         ('P', 'Presentation'),
     )
     # user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    user = models.ManyToManyField(User)
+    # user = models.ManyToManyField(User)
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
     category = models.DateField(max_length=1,choices=C_CATEGORY)
@@ -38,6 +48,12 @@ class Event(models.Model):
     ticket_adult = models.DecimalField(max_digits=10, decimal_places=2)
     ticket_child = models.DecimalField(max_digits=10, decimal_places=2)
 
+
+class EventUser(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True)
 
 
 

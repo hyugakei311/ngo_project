@@ -1,0 +1,13 @@
+[
+  {
+    "model": "ngo.user",
+    "pk": 1,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Lennon",
+      "email": "s@b.com",
+      "password": "sasa12345",
+      "role": "1"
+    }
+  }
+]
