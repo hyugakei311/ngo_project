@@ -7,13 +7,36 @@ from .models import User, Event
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from .forms import UserLoginForm
 from django.urls import reverse, reverse_lazy
+from django.views import View
+
 # Create your views here.
+
 
 
 class UserCreate(CreateView):
     model = User
     fields = "__all__"
-    success_url = '/login/'
+    success_url = '/list-users/'
+
+    def get(self, request, *args, **kwargs):
+        try:
+            if request.session['role'] == 'admin':
+                return super().get(request, *args, **kwargs)
+        except KeyError:
+            pass
+        return HttpResponseRedirect(reverse('login'))
+
+
+
+# class UserCreateLog(View):
+#     @staticmethod
+#     def get(self, request, *args, **kwargs):
+#         try:
+#             if request.session['role'] == 'admin':
+#                 return UserCreate.as_view()
+#         except KeyError:
+#             pass
+#         return Home.as_view()
 
 
 def login(request):
@@ -70,27 +93,35 @@ def logout(request):
 class UserManagementView(ListView):
     model = User
 
+    # def get(self, request, *args, **kwargs):
+    #     try:
+    #         if request.session['role'] == 'admin':
+    #             self.object_list = self.get_queryset()
+    #             allow_empty = self.get_allow_empty()
+    #             if not allow_empty:
+    #                 # When pagination is enabled and object_list is a queryset,
+    #                 # it's better to do a cheap query than to load the unpaginated
+    #                 # queryset in memory.
+    #                 if self.get_paginate_by(self.object_list) is not None and hasattr(self.object_list, 'exists'):
+    #                     is_empty = not self.object_list.exists()
+    #                 else:
+    #                     is_empty = not self.object_list
+    #                 if is_empty:
+    #                     raise Http404(_("Empty list and '%(class_name)s.allow_empty' is False.") % {
+    #                         'class_name': self.__class__.__name__,
+    #                     })
+    #             context = self.get_context_data()
+    #             return self.render_to_response(context)
+    #     except KeyError:
+    #         return HttpResponseRedirect(reverse('login'))
+
     def get(self, request, *args, **kwargs):
         try:
             if request.session['role'] == 'admin':
-                self.object_list = self.get_queryset()
-                allow_empty = self.get_allow_empty()
-                if not allow_empty:
-                    # When pagination is enabled and object_list is a queryset,
-                    # it's better to do a cheap query than to load the unpaginated
-                    # queryset in memory.
-                    if self.get_paginate_by(self.object_list) is not None and hasattr(self.object_list, 'exists'):
-                        is_empty = not self.object_list.exists()
-                    else:
-                        is_empty = not self.object_list
-                    if is_empty:
-                        raise Http404(_("Empty list and '%(class_name)s.allow_empty' is False.") % {
-                            'class_name': self.__class__.__name__,
-                        })
-                context = self.get_context_data()
-                return self.render_to_response(context)
+                return super().get(request, *args, **kwargs)
         except KeyError:
-            return HttpResponseRedirect(reverse('login'))
+            pass
+        return HttpResponseRedirect(reverse('login'))
 
 
 class UserUpdate(UpdateView):
@@ -101,27 +132,42 @@ class UserUpdate(UpdateView):
     def get_success_url(self):
         return reverse('user_update', kwargs={'pk': self.object.pk})
 
+    # def get(self, request, *args, **kwargs):
+    #     try:
+    #         if self.request.session['role'] == 'admin':
+    #             self.object = self.get_object()
+    #             return super().get(request, *args, **kwargs)
+    #     except KeyError:
+    #         return HttpResponseRedirect(reverse('login'))
     def get(self, request, *args, **kwargs):
         try:
-            if self.request.session['role'] == 'admin':
-                self.object = self.get_object()
+            if request.session['role'] == 'admin':
                 return super().get(request, *args, **kwargs)
         except KeyError:
-            return HttpResponseRedirect(reverse('login'))
+            pass
+        return HttpResponseRedirect(reverse('login'))
 
 
 class UserDelete(DeleteView):
     model = User
-    success_url = reverse_lazy('author-list')
+    success_url = reverse_lazy('listusers')
+
+    # def get(self, request, *args, **kwargs):
+    #     try:
+    #         if self.request.session['role'] == 'admin':
+    #             self.object = self.get_object()
+    #             context = self.get_context_data(object=self.object)
+    #             return self.render_to_response(context)
+    #     except KeyError:
+    #         return HttpResponseRedirect(reverse('login'))
 
     def get(self, request, *args, **kwargs):
         try:
-            if self.request.session['role'] == 'admin':
-                self.object = self.get_object()
-                context = self.get_context_data(object=self.object)
-                return self.render_to_response(context)
+            if request.session['role'] == 'admin':
+                return super().get(request, *args, **kwargs)
         except KeyError:
-            return HttpResponseRedirect(reverse('login'))
+            pass
+        return HttpResponseRedirect(reverse('login'))
 
 
 
@@ -143,6 +189,27 @@ class Home(TemplateView):
 #             return HttpResponseRedirect(reverse('login'))
 
 
+class EventCreate(CreateView):
+    model = User
+    fields = "__all__"
+    success_url = '/list-users/'
+
+    def get(self, request, *args, **kwargs):
+        try:
+            if request.session['role'] == 'admin':
+                return super().get(request, *args, **kwargs)
+        except KeyError:
+            pass
+        return HttpResponseRedirect(reverse('login'))
 
 
+class EventManagementView(ListView):
+    model = Event
 
+    def get(self, request, *args, **kwargs):
+        try:
+            if request.session['role'] == 'admin':
+                return super().get(request, *args, **kwargs)
+        except KeyError:
+            pass
+        return HttpResponseRedirect(reverse('login'))

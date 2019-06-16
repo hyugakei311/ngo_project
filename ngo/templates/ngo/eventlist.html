@@ -1,0 +1,39 @@
+{% extends 'ngo/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+<h1>Event Management</h1>
+{% endblock %}
+
+{% block content %}
+
+<div style="max-width: 550px; min-width: auto;">
+    <a href="admin/addevent.html" class = 'btn btn-success float-right'>Add a new Event</a>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Event</th>
+            <th scope="col">Category</th>
+            <th scope="col">Location</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+        <tr>
+            <td>{{event.name}}</td>
+            <td>{{event.category}}</td>
+            <td>{{event.location}}</td>
+            <td>{{event.start_date}}</td>
+            <td>{{event.end_date}}</td>
+            <td><a href="admin/editevent.html">Edit</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

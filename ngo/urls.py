@@ -1,5 +1,5 @@
 from django.urls import path,  reverse_lazy
-from .views import UserCreate, login, logout, UserManagementView, UserUpdate, UserDelete, Home
+from .views import UserCreate, login, logout, UserManagementView, UserUpdate, UserDelete, Home, EventManagementView
 from django.contrib.auth import views as auth_views
 
 
@@ -14,4 +14,5 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('edit/<int:pk>/', UserUpdate.as_view(), name='user_update'),
     path('delete/<int:pk>/', UserDelete.as_view(), name='user_delete'),
+    path('event/', EventManagementView.as_view(), name='even_list'),
 ]

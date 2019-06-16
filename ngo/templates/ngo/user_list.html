@@ -23,12 +23,12 @@ User Management
         </thead>
         <tbody>
         <h3>Users: {{object_list.count}}</h3>
-        {% for event in object_list  %}
+        {% for user in object_list  %}
         <tr>
-            <td>{{event.first_name}}</td>
-            <td>{{event.last_name}}</td>
-            <td>{{event.email}}</td>
-            <td>{{event.role}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.role}}</td>
             <td><a class="btn btn-primary btn-sm" role="button"  href="{% url 'user_update' user.pk %}">Edit</a>
             <a href="{% url 'user_delete' user.pk %}" class="btn btn-danger btn-sm" role="button">Delete</a>
             </td>
