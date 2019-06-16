@@ -5,25 +5,38 @@
     {% load static %}
     <title>{% block title %} NGO {% endblock %}</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--link href="{% static 'productapp/css/style.css' %}" rel="stylesheet"-->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <link href="{% static 'ngo/css/style.css' %}" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #3b7193 !important;">
     <div class="container">
         <a class="navbar-brand" href="#">NGO </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
-                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <button aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-target="#navbarsExample07" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExample07">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'homepage'  %}">Home </a>
+                    <a class="nav-link" href="{% url 'homepage'  %}">Home</a>
+                </li>
+                {% if request.session.role == 'admin' %}
+                <li class="nav-item">
+                    <a class="nav-link text-truncate link-management" href="{% url 'listusers'  %}" tabindex="0" data-toggle="tooltip" title="User Management">User Management</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link text-truncate link-management" href="{% url 'homepage'  %}" tabindex="1" data-toggle="tooltip" title="Event Management">Event Management</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-truncate link-management" href="{% url 'homepage'  %}">User View</a>
+                </li>
+                {% endif %}
 
 
             </ul>
@@ -31,18 +44,27 @@
                 <input class="form-control" type="text" placeholder="Search" aria-label="Search">
             </form-->
             <ul class="navbar-nav ml-auto">
-                {% if user.is_authenticated %}
+                {% if request.session.role == 'admin' %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ BASE_URL }}/admin">Admin</a>
+                    <span class="navbar-text">
+                    {% for use in request.session.info_user %}
+                        {% if use == 'admin' %}
+                        <small>({{ use }})</small>
+                        {% else %}
+                    {{ use }}
+                        {% endif %}
+                    {% endfor %}
+                    </span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ BASE_URL }}/admin/logout/">Log out</a>
+                    <a class="nav-link" href="{% url 'logout' %}">Log out</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ BASE_URL }}/admin">Log in</a>
+                    <a class="nav-link" href="{% url 'login'  %}">Log in</a>
                 </li>
                 {% endif %}
+
             </ul>
 
         </div>
@@ -56,12 +78,12 @@
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+<script crossorigin="anonymous"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="{% static 'ngo/js/client.js' %}"></script>
 </body>
 </html>

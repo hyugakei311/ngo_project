@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import DateTimeField
 from django.utils import timezone
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 
@@ -25,6 +26,16 @@ class User(models.Model):
     email = models.EmailField(max_length=75, unique=True)
     password = models.CharField(max_length=100)
     role = models.CharField(max_length=5, choices=R_ROLE,  default=USER,)
+
+    @property
+    def is_authenticated(self, request):
+        user_role = 'not_login'
+        if request.session['role'] == 'admin':
+            user_role = 'admin'
+        elif request.session['role'] == 'user':
+            user_role = 'user'
+        return user_role
+
 
 
 class Event(models.Model):

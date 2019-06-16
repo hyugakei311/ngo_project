@@ -1,0 +1,16 @@
+{% extends 'ngo/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+Edit User
+{% endblock %}
+
+{% block content %}
+<div style="max-width: 550px; min-width: auto;">
+    <form method="post">{% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</div>
+{% endblock %}

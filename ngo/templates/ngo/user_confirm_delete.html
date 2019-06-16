@@ -1,0 +1,17 @@
+{% extends 'ngo/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+Delete User
+{% endblock %}
+
+{% block content %}
+<div style="max-width: auto; min-width: 420px;">
+    <form method="post">{% csrf_token %}
+        {{ form|crispy }}
+        <h5>Are you sure you want to delete <strong>"{{ object.first_name}} {{ object.last_name }}, <small>email</small>: {{ object.email}}  <small>role</small>: {{ object.role }}"</strong>?</h5>
+        <button type="submit" class="btn btn-danger">Confirm</button>
+    </form>
+</div>
+{% endblock %}
