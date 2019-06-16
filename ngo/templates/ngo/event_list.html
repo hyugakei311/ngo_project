@@ -9,15 +9,16 @@ User Management
 {% block content %}
 
 <div style="max-width: auto; min-width: 420px;">
-    <a href="{% url 'user_create' %}" class = 'btn btn-success float-right'>Add user</a>
-
+    <a href="{% url 'user_create' %}" class = 'btn btn-success float-right'>Add a new Event</a>
+    {% if object_list %}
     <table class="table table-striped">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Role</th>
+            <th scope="col">Event</th>
+            <th scope="col">Category</th>
+            <th scope="col">location</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
             <th scope="col"></th>
         </tr>
         </thead>
@@ -25,16 +26,20 @@ User Management
         <h3>Users: {{object_list.count}}</h3>
         {% for event in object_list  %}
         <tr>
-            <td>{{event.first_name}}</td>
-            <td>{{event.last_name}}</td>
-            <td>{{event.email}}</td>
-            <td>{{event.role}}</td>
+            <td>{{event.name}}</td>
+            <td>{{event.category}}</td>
+            <td>{{event.location}}</td>
+            <td>{{event.start_date}}</td>
+            <td>{{event.end_date}}</td>
             <td><a class="btn btn-primary btn-sm" role="button"  href="{% url 'user_update' user.pk %}">Edit</a>
-            <a href="{% url 'user_delete' user.pk %}" class="btn btn-danger btn-sm" role="button">Delete</a>
+            <!--a href="{% url 'user_delete' user.pk %}" class="btn btn-danger btn-sm" role="button">Delete</a-->
             </td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
+    {% else %}
+    <h4>No Recorded Events </h4>
+    {% endif %}
 </div>
 {% endblock %}
