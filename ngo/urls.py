@@ -1,11 +1,11 @@
 from django.urls import path,  reverse_lazy
-from .views import UserCreate, login, logout, UserManagementView, UserUpdate, UserDelete, Home, EventManagementView
+from .views import UserCreate, login, logout, UserManagementView, UserUpdate, UserDelete, Home, EventManagementView, EventCreate, EventUpdate
 from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
     path('', Home.as_view(), name='homepage'),
-    path('adduser', UserCreate.as_view(), name='user_create'),
+    path('adduser/', UserCreate.as_view(), name='user_create'),
     # path('login', auth_views.LoginView.as_view(), name='login'),
     path('login/', login, name='login'),
     path('logout/', logout, name='logout'),
@@ -15,4 +15,6 @@ urlpatterns = [
     path('edit/<int:pk>/', UserUpdate.as_view(), name='user_update'),
     path('delete/<int:pk>/', UserDelete.as_view(), name='user_delete'),
     path('event/', EventManagementView.as_view(), name='even_list'),
+    path('event/add', EventCreate.as_view(), name='event_create'),
+    path('event/edit/<int:pk>/', EventUpdate.as_view(), name='event_update'),
 ]
