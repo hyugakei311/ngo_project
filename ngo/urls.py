@@ -1,7 +1,8 @@
 from django.urls import path,  reverse_lazy
-from .views import UserCreate, login, logout, UserManagementView, UserUpdate, UserDelete, Home, EventManagementView, EventCreate, EventUpdate
+from .views import UserCreate, login, logout, UserManagementView, UserUpdate, UserDelete, Home, EventManagementView, EventCreate, EventUpdate, EventListUserView
 from django.contrib.auth import views as auth_views
 from django.conf import settings
+from .models import Event
 from django.views.static import serve
 from django.conf.urls.static import static
 
@@ -19,6 +20,7 @@ urlpatterns = [
     path('event/', EventManagementView.as_view(), name='even_list'),
     path('event/add', EventCreate.as_view(), name='event_create'),
     path('event/edit/<int:pk>/', EventUpdate.as_view(), name='event_update'),
+    path('event/list/', EventListUserView.as_view(model = Event), name='even_user_list'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # if settings.DEBUG:
 #     urlpatterns += serve(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

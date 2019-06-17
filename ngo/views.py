@@ -5,7 +5,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from .models import User, Event
 from django.http import HttpResponseRedirect, HttpResponse, Http404
-from .forms import UserLoginForm
+from .forms import UserLoginForm, EventUserViewForm
 from django.urls import reverse, reverse_lazy
 from django.views import View
 
@@ -145,7 +145,7 @@ class Home(TemplateView):
 class EventCreate(CreateView):
     model = Event
     fields = "__all__"
-    success_url = '/even/'
+    success_url = '/event/'
 
     def get(self, request, *args, **kwargs):
         try:
@@ -204,6 +204,23 @@ class EventUpdate(UpdateView):
     #             return super().get(request, *args, **kwargs)
     #     except KeyError:
     #         return HttpResponseRedirect(reverse('login'))
+    def get(self, request, *args, **kwargs):
+        try:
+            if request.session['role'] == 'admin':
+                return super().get(request, *args, **kwargs)
+        except KeyError:
+            pass
+        return HttpResponseRedirect(reverse('login'))
+
+
+class EventListUserView(ListView):
+    model = EventUserViewForm
+    # fields ='__all_'
+    #     # ['name', 'location', 'image']
+    # form_class = EventUserViewForm
+    fields = "__all__"
+    template_name_suffix = '_list_user'
+
     def get(self, request, *args, **kwargs):
         try:
             if request.session['role'] == 'admin':

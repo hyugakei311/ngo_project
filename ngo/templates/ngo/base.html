@@ -27,15 +27,15 @@
                 </li>
                 {% if request.session.role == 'admin' %}
                 <li class="nav-item">
-                    <a class="nav-link text-truncate link-management" href="{% url 'listusers'  %}" tabindex="0" data-toggle="tooltip" title="User Management">User Management</a>
+                    <a class="nav-link text-truncate2 link-management" href="{% url 'listusers'  %}" tabindex="0" data-toggle="tooltip" title="User Management">User Management</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-truncate link-management" href="{% url 'even_list'  %}" tabindex="1" data-toggle="tooltip" title="Event Management">Event Management</a>
+                    <a class="nav-link text-truncate2 link-management" href="{% url 'even_list'  %}" tabindex="1" data-toggle="tooltip" title="Event Management">Event Management</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-truncate link-management" href="{% url 'homepage'  %}">User View</a>
+                    <a class="nav-link text-truncate2 link-management" href="{% url 'homepage'  %}">User View</a>
                 </li>
                 {% endif %}
 

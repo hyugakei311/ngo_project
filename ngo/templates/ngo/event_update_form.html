@@ -9,6 +9,7 @@ Edit User
 {% block content %}
 
 <div style="max-width: 550px; min-width: auto;">
+    <a href="" class="back">back</a>
     <form method="post" enctype="multipart/form-data">{% csrf_token %}
         {{ form|crispy }}
         <button type="submit" class="btn btn-success">Save</button>

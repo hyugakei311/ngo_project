@@ -9,6 +9,11 @@ class UserLoginForm(ModelForm):
         fields = ('email', 'password')
 
 
+class EventUserViewForm(ModelForm):
+    class Meta:
+        model = Event
+        fields = ['name', 'location', 'image']
+
 # class EventCreateForm(ModelForm):
 #     class Meta:
 #         model = Event

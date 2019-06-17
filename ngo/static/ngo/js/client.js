@@ -27,4 +27,8 @@
      
 
      //$( "p" ).prepend( "<b>Hello </b>" );
+     $('a.back').click(function(){
+		parent.history.back();
+		return false;
+	});
 });
