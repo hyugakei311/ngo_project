@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37812f19-54d3-44de-8620-ef0e8dc12951" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ngo/templates/ngo/event_update_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/static/ngo/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/static/ngo/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/static/ngo/js/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/static/ngo/js/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/templates/ngo/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/templates/ngo/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/templates/ngo/event_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/templates/ngo/event_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/templates/ngo/eventlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/templates/ngo/eventlist2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/templates/ngo/login2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/templates/ngo/user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/ngo/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/ngo/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/ngo/js/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/ngo/js/client.js" afterDir="false" />
-    </list>
+    <list default="true" id="37812f19-54d3-44de-8620-ef0e8dc12951" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +15,7 @@
         <entry file="file://$PROJECT_DIR$/ngo/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
-              <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+              <caret line="99" selection-start-line="99" selection-end-line="100" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -433,7 +415,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="22" width="1869" height="1058" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24594595" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -661,7 +642,7 @@
     <entry file="file://$PROJECT_DIR$/ngo/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+          <caret line="99" selection-start-line="99" selection-end-line="100" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

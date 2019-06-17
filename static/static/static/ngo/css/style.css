@@ -1,8 +1,0 @@
-.inventory .card-text, .modal-body .card-text,{
-    margin-bottom: .5rem;
-}
-
-.inventory .card-text.detail-name, .modal-body .card-text.detail-name{
-    font-size: 70%;
-    margin-bottom: 0;
-}
