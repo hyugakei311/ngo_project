@@ -190,8 +190,12 @@ class EventUpdate(UpdateView):
     fields = "__all__"
     template_name_suffix = '_update_form'
 
+
+
     def get_success_url(self):
-        return reverse('event_update', kwargs={'pk': self.object.pk})
+        # return reverse('event_update', kwargs={'pk': self.object.pk})
+        return reverse('even_list')
+
 
     # def get(self, request, *args, **kwargs):
     #     try:

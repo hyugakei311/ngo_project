@@ -57,7 +57,7 @@ class Event(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     registration = models.BooleanField()
-    image = models.ImageField(upload_to='media/%Y/%m/%d', blank=True, default='media/nopivture.jpg')
+    image = models.ImageField(upload_to='media/%Y/%m/%d', blank=True, default='/static/ngo/images/no_image_available.jpg')
     ticket_adult = models.DecimalField(max_digits=10, decimal_places=2)
     ticket_child = models.DecimalField(max_digits=10, decimal_places=2)
 
