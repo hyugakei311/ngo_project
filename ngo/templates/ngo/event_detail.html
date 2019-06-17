@@ -1,0 +1,44 @@
+{% extends 'ngo/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+<h1>Event Detail: {{event.name}}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1>Event Registration Detail: {{event.name}}</h1>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div class="row">{{event.name}}</div>
+            <div class="row">{{event.category}}</div>
+            <div class="row">{{event.location}}</div>
+            <div class="row">{{event.start_date}}  {{event.start_time}}</div>
+            <div class="row">{{event.end_date}}  {{event.end_time}}</div>
+        </div>
+
+        <div class="col-5">
+            <div class="row">{{event.description}}</div>
+            <div class="row">Adult Ticket Price: ${{event.ticket_adult}}</div>
+            <div class="row">Child Ticket Price: ${{event.ticket_child}}</div>
+        </div>
+
+        <div class="col-4">
+            <div class="media">
+                <img class="mr-3" src={{event.image}} alt="Generic placeholder image">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    {% if event.registration %}<a href="event/registration.html" class = 'btn btn-success'>Register</a>{% endif %}
+</div>
+
+
+{% endblock %}
