@@ -3,41 +3,64 @@
 {% load static %}
 
 {% block title %}
-<h1>Event Detail: {{event.name}}</h1>
+Event Detail: {{event.name}}
 {% endblock %}
 
 {% block content %}
 <div class="container-fluid">
-    <h1>Event Registration Detail: {{event.name}}</h1>
+    <h2>Event Registration Detail: {{event.name}}</h2>
+    <br>
 </div>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3">
-            <div class="row">{{event.name}}</div>
-            <div class="row">{{event.category}}</div>
-            <div class="row">{{event.location}}</div>
-            <div class="row">{{event.start_date}}  {{event.start_time}}</div>
-            <div class="row">{{event.end_date}}  {{event.end_time}}</div>
+        <div class="col-md-4">
+            <div class="row">Event name: {{event.name}}</div>
+            <br>
+            <div class="row">Category: {{event.get_category}}</div>
+            <br>
+            <div class="row">Location: {{event.location}}</div>
+            <br>
+            <div class="row">Start Date: {{event.start_date}}</div>
+            <br>
+            <div class="row">Start Time: {{event.start_time}}</div>
+            <br>
         </div>
-
-        <div class="col-5">
-            <div class="row">{{event.description}}</div>
-            <div class="row">Adult Ticket Price: ${{event.ticket_adult}}</div>
-            <div class="row">Child Ticket Price: ${{event.ticket_child}}</div>
+        <div class="col-md-5">
+            <div  class="row justify-content-left">Description:<br>{{event.description}}</div>
         </div>
-
-        <div class="col-4">
+        <div class="col-md-3">
             <div class="media">
-                <img class="mr-3" src={{event.image}} alt="Generic placeholder image">
+                <img class="mr-3" src={{event.image.url}} alt="Generic placeholder image">
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">End Date: {{event.end_date}}</div>
+            <br>
+        </div>
+        <div class="col-md-3">
+            <div class="row justify-content-center">Adult Ticket Price: ${{event.ticket_adult}}</div>
+        </div>
+
+    </div>
+    <div class="row">
+            <div class="col-md-4">
+                <div class="row">End Time: {{event.end_time}}</div>
+            </div>
+            <div class="col-md-3">
+                <div class="row justify-content-center">Child Ticket Price: ${{event.ticket_child}}</div>
+            </div>
+
+    </div>
+
 </div>
 
-
+<br>
 <div class="container-fluid">
-    {% if event.registration %}<a href="event/registration.html" class = 'btn btn-success'>Register</a>{% endif %}
+    {% if event.registration %}<a href="{% url 'event_register' event.id %}" class = 'btn btn-success btn-block'>Register</a>{% endif %}
 </div>
 
 

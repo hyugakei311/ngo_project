@@ -8,35 +8,24 @@ Event Management
 
 {% block content %}
 <div style="max-width: auto; min-width: 420px;">
-    <h4>Events: {{object_list.count}}</h4>
-    <a href="{% url 'event_create' %}" class='btn btn-success float-right'>Add a new Event</a>
+    <h4>Event Registration</h4>
+
     {% if object_list %}
     <div class="row">
 
     {% for event in object_list %}
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <img class="card-img-top h-100" src={{event.image.url}} alt="Event Image">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+
+            <a href="{% url 'event_details' event.id%}" class="justify-content-center">{{event.name}}: {{event.location}}</a>
         </div>
     </div>
-    <!--tr>
-        <td>{{event.name}}</td>
-        <td>{{event.category}}</td>
-        <td>{{event.location}}</td>
-        <td>{{event.start_date}}</td>
-        <td>{{event.end_date}}</td>
-        <td><a class="btn btn-primary btn-sm" role="button"  href="{% url 'event_update' event.pk %}">Edit</a>
-
-        </td>
-    </tr-->
     {% endfor %}
 
     {% else %}
     <h4>No Recorded Events </h4>
     {% endif %}
+    </div>
 </div>
 {% endblock %}

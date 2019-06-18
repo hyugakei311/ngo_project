@@ -1,5 +1,8 @@
 {% extends 'ngo/base.html' %}
 {% load crispy_forms_tags %}
+{% block title %}
+Event Detail: {{event.name}}
+{% endblock %}
 {% block content %}
 <div style="max-width: 550px; min-width: auto;">
     <form method="post">{% csrf_token %}

@@ -1,0 +1,41 @@
+{% extends 'ngo/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Event Detail: {{event.name}}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h2>Event Registration Detail: {{event.name}}</h2>
+    <br>
+</div>
+
+<div style="max-width: 550px; min-width: auto;">
+    <form method="post">{% csrf_token %}
+        <div class="row">
+            <div class="col">{{form.ticket_adult_numbers.label_tag}}</div>
+            <div class="col">
+                    {% if form.ticket_adult_numbers.errors%}{{form.ticket_adult_numbers.errors}}
+                    {% else %}{{form.ticket_adult_numbers}}{% endif %}
+            </div>
+            <div class="col">tickets X ${{event.ticket_adult}}</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">{{form.ticket_child_numbers.label_tag}}</div>
+            <div class="col">
+                    {% if form.ticket_child_numbers.errors%}{{form.ticket_child_numbers.errors}}
+                    {% else %}{{form.ticket_child_numbers}}{% endif %}
+            </div>
+            <div class="col">tickets X ${{event.ticket_child}}</div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <button type="button" class = 'btn btn-success btn-block' type="submit">Register</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+

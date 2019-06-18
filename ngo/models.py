@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.db.models import DateTimeField
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
@@ -43,9 +44,10 @@ class Event(models.Model):
     PRESENTATION = 3
     C_CATEGORY = (
         ('C', 'Conference'),
-        ('S', 'Seminar'),
-        ('P', 'Presentation'),
+        ('S','Seminar'),
+        ('P','Presentation')
     )
+
     # user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     # user = models.ManyToManyField(User)
     name = models.CharField(max_length=50)
@@ -61,12 +63,22 @@ class Event(models.Model):
     ticket_adult = models.DecimalField(max_digits=10, decimal_places=2)
     ticket_child = models.DecimalField(max_digits=10, decimal_places=2)
 
+    def get_category(self):
+        for c in self.C_CATEGORY:
+            if self.category == c[0]:
+                return c[1]
+
 
 class EventUser(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
+    ticket_adult_numbers = models.IntegerField(default=0)
+    ticket_child_numbers = models.IntegerField(default=0)
+
+    def get_absolute_url(self):
+        return reverse('event_details', args=[self.id])
 
 
 
