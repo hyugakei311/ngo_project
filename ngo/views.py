@@ -188,31 +188,36 @@ class EventRegisterView(CreateView):
     model = EventUser
     template_name = 'ngo/event_registration.html'
     form_class = EventRegisterForm
+    success_url = "register_success"
+
 
     def form_valid(self, form):
-        # Instead of return this HttpResponseRedirect, return an
-        #  new rendered page
-        super(EventRegisterView, self).form_valid(form)
-        return render(self.request, self.template_name,
-                      self.get_context_data(form=form))
+        self.model = form.save(commit=False)
+        self.model.user = get_object_or_404(User, id=self.request.user.id)
+        self.model.event = get_object_or_404(Event, id=self.request.session['event'])
+        self.model.save()
+        # return HttpResponseRedirect(self.get_success_url())
+        if self.request.method == "GET":
+            super(EventRegisterView, self).form_valid(form)
+            return render(self.request, self.template_name, self.get_context_data(form=form))
+        return HttpResponseRedirect(self.get_success_url())
 
     def get_context_data(self, **kwargs):
-        context = super(EventRegisterView, self).get_context_data(**kwargs)
-        context['user'] = self.request.user
-        event = get_object_or_404(Event, id=self.request.session['event'])
-        context['event'] = event
-        return context
+        ctx = super(EventRegisterView, self).get_context_data(**kwargs)
+        ctx['event'] = get_object_or_404(Event, id=self.request.session['event'])
+        return ctx
 
     def get_initial(self, *args, **kwargs):
         initial = super(EventRegisterView, self).get_initial(**kwargs)
-        initial['user'] = self.request.user
         initial['event'] = get_object_or_404(Event, id=self.request.session['event'])
-        initial['created_at'] = datetime.datetime.now().timestamp()
-        initial['updated_at'] = datetime.datetime.now().timestamp()
         return initial
 
-    # def post(self, request, *args, **kwargs):
-    #     return HttpResponseRedirect(reverse('event_register'))
+    def get_success_url(self):
+        try:
+            del self.request.session['event']
+        except KeyError:
+            pass
+        return reverse('register_success')
 
 def register_success(request):
     try:

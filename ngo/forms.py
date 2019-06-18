@@ -19,5 +19,11 @@ class EventRegisterForm(ModelForm):
 
     class Meta:
         model = EventUser
-        fields = {'ticket_adult_numbers', 'ticket_child_numbers'}
+        exclude = ('user','event','created_at','updated_at')
+
+        # fields = {'user','event','ticket_adult_numbers', 'ticket_child_numbers'}
+        # widgets = {'user': forms.HiddenInput(),
+        #            'event': forms.HiddenInput(),
+        #            'created_at':forms.HiddenInput(),
+        #            'updated_at':forms.HiddenInput()}
 

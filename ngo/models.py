@@ -48,8 +48,6 @@ class Event(models.Model):
         ('P','Presentation')
     )
 
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    # user = models.ManyToManyField(User)
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
     category = models.CharField(max_length=1,choices=C_CATEGORY, default=CONFERENCE)
@@ -78,7 +76,7 @@ class EventUser(models.Model):
     ticket_child_numbers = models.IntegerField(default=0)
 
     def get_absolute_url(self):
-        return reverse('event_details', args=[self.id])
+        return reverse('registration_detail', args=[self.id])
 
 
 

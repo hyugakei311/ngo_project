@@ -17,7 +17,7 @@ Event Detail: {{event.name}}
             <div class="col">{{form.ticket_adult_numbers.label_tag}}</div>
             <div class="col">
                     {% if form.ticket_adult_numbers.errors%}{{form.ticket_adult_numbers.errors}}
-                    {% else %}{{form.ticket_adult_numbers}}{% endif %}
+                    {% else %}<input type="number" min="0" {{form.ticket_adult_numbers}}{% endif %}
             </div>
             <div class="col">tickets X ${{event.ticket_adult}}</div>
         </div>
@@ -26,13 +26,13 @@ Event Detail: {{event.name}}
             <div class="col">{{form.ticket_child_numbers.label_tag}}</div>
             <div class="col">
                     {% if form.ticket_child_numbers.errors%}{{form.ticket_child_numbers.errors}}
-                    {% else %}{{form.ticket_child_numbers}}{% endif %}
+                {% else %}<input type="number" min="0" {{form.ticket_child_numbers}}{% endif %}
             </div>
             <div class="col">tickets X ${{event.ticket_child}}</div>
         </div>
         
         <div class="row justify-content-center">
-            <button type="button" class = 'btn btn-success btn-block' type="submit">Register</button>
+            <button type="submit" class = 'btn btn-success btn-block'>Register</button>
         </div>
     </form>
 </div>

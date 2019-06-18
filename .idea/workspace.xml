@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d79e3c8-cfab-47df-a606-08e00b1000d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ngo/templates/ngo/register_success.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ngo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ngo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/templates/ngo/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/templates/ngo/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/templates/ngo/event_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/templates/ngo/event_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/templates/ngo/event_list_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/templates/ngo/event_list_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/templates/ngo/user_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/templates/ngo/user_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ngo/templates/ngo/event_registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/templates/ngo/event_registration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ngo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ngo_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ngo_project/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ngo/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="213" column="47" lean-forward="true" selection-start-line="213" selection-start-column="47" selection-end-line="213" selection-end-column="47" />
+            <state relative-caret-position="227">
+              <caret line="206" column="81" selection-start-line="206" selection-start-column="81" selection-end-line="206" selection-end-column="81" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -36,12 +29,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ngo/models.py">
+        <entry file="file://$PROJECT_DIR$/ngo/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="74" column="66" lean-forward="true" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="66" />
+            <state relative-caret-position="219">
+              <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#81#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,10 +43,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ngo/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="15" column="72" lean-forward="true" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+            <state relative-caret-position="346">
+              <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ngo/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,22 +67,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ngo/templates/ngo/event_registration.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+            <state relative-caret-position="210">
+              <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ngo/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#0#81#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,8 +107,8 @@
         <option value="$PROJECT_DIR$/ngo/templates/ngo/user_form.html" />
         <option value="$PROJECT_DIR$/ngo/templates/ngo/register_success.html" />
         <option value="$PROJECT_DIR$/ngo/admin.py" />
-        <option value="$PROJECT_DIR$/ngo/models.py" />
         <option value="$PROJECT_DIR$/ngo/urls.py" />
+        <option value="$PROJECT_DIR$/ngo/models.py" />
         <option value="$PROJECT_DIR$/ngo/forms.py" />
         <option value="$PROJECT_DIR$/ngo/views.py" />
         <option value="$PROJECT_DIR$/ngo/templates/ngo/event_registration.html" />
@@ -123,9 +116,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="255" />
+    <option name="x" value="352" />
     <option name="y" value="23" />
-    <option name="width" value="1029" />
+    <option name="width" value="1088" />
     <option name="height" value="801" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -191,13 +184,6 @@
             <path>
               <item name="ngo_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="ngo_project" type="462c0819:PsiDirectoryNode" />
-              <item name="ngo" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="ngo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ngo_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ngo_project" type="462c0819:PsiDirectoryNode" />
               <item name="ngo_project" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -257,10 +243,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="255" y="23" width="1029" height="801" extended-state="0" />
+    <frame x="352" y="23" width="1088" height="801" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20734127" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19587629" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -271,13 +257,24 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989899" visible="true" weight="0.32863188" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4989899" visible="true" weight="0.32863188" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010101" side_tool="true" weight="0.32863188" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ngo/urls.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/djangoenv/lib/python3.6/site-packages/django/views/generic/edit.py" />
@@ -304,12 +301,6 @@
           <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ngo_project/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ngo/templates/ngo/event_create_form.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/ngo/templates/ngo/event_list_user.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -359,16 +350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ngo/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ngo/templates/ngo/register_success.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -376,57 +357,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ngo/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/ngo/templates/ngo/event_create_form.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ngo/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="74" column="66" lean-forward="true" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/ngo_project/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ngo/views.py">
+    <entry file="file://$PROJECT_DIR$/ngo/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="213" column="47" lean-forward="true" selection-start-line="213" selection-start-column="47" selection-end-line="213" selection-end-column="47" />
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ngo/templates/ngo/event_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="612">
           <caret line="62" column="111" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ngo/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ngo/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="15" column="72" lean-forward="true" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+        <state relative-caret-position="346">
+          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ngo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="206" column="81" selection-start-line="206" selection-start-column="81" selection-end-line="206" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ngo/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ngo/templates/ngo/event_registration.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        <state relative-caret-position="210">
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
